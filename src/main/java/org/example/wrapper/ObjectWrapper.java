@@ -4,15 +4,16 @@ public class ObjectWrapper {
     private Object object;
     private String destroyMethodName;
     private String initMethodName;
+    private boolean isSingleton;
 
-    public ObjectWrapper(Object object, String destroyMethodName, String initMethodName) {
+    public ObjectWrapper(Object object, String destroyMethodName, String initMethodName, boolean isSingleton) {
         this.object = object;
         this.destroyMethodName = destroyMethodName;
         this.initMethodName = initMethodName;
+        this.isSingleton = isSingleton;
     }
 
     public ObjectWrapper() { }
-
 
     public Object getObject() {
         return object;
@@ -36,6 +37,14 @@ public class ObjectWrapper {
 
     public void setInitMethodName(String initMethodName) {
         this.initMethodName = initMethodName;
+    }
+
+    public boolean isSingleton() {
+        return isSingleton;
+    }
+
+    public void setSingleton(boolean singleton) {
+        isSingleton = singleton;
     }
 
     @Override
